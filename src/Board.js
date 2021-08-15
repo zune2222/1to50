@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Cell from "./Cell";
 
 function Board({ numbers, handleClick }) {
-  console.log("Board");
   return (
     <Container>
       {numbers.map((num, index) => (
@@ -15,9 +14,12 @@ function Board({ numbers, handleClick }) {
 
 
 const Container = styled.div`
-    width: 400px;
-    height: 400px;
-    border: 1px solid blue;
+    width:90vw;
+    height:90vw;
+    max-width:400px;
+    max-height:400px;
+    border-radius:15px;
+    border:0px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);

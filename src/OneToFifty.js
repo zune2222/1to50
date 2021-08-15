@@ -37,7 +37,7 @@ function OneToFifty() {
             {gameFlag ? (
                 <Timer/>
             ): (
-                <StartButton onClick={startGame}>start</StartButton>
+                <StartButton onClick={startGame}>시작하기</StartButton>
             )}
         </Container>
     );
@@ -50,18 +50,29 @@ const shuffleArray=array=>{
     return array;
 }
 const Container = styled.div`
-    width:600px;
-    height:800px;
+    width:100%;
+    height:90vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    border:1px solid black;
+    border-radius:30px;
+    box-shadow:5px 7px 7px 5px rgba(0,0,0,0.16);
     margin:auto;
 `;
 const StartButton = styled.button`
     margin-top:30px;
     width:100px;
     height:50px;
+    border-radius:15px;
+    border:0px;
+    box-shadow:5px 7px 2px 3px rgba(0,0,0,0.16);
+    &:hover{
+        transform:scale(1.05);
+        transition:.5s;
+        color:#8B756D;
+    }
+    transition:.5s;
 `;
+
 export default OneToFifty;
