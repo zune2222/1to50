@@ -6,7 +6,7 @@ function App(){
   return (
     <div>
       <div className="container">
-        <div className="d-flex justify-content-center my-3">
+        <div className="d-flex justify-content-center my-4">
           <div className="col-12 col-md-6 col-lg-6">
             <OneToFifty></OneToFifty>
           </div>
