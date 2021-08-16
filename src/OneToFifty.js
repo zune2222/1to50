@@ -1,19 +1,20 @@
 import React, {useState} from "react";
 import styled from "styled-components";
 import Board from "./Board";
-import Timer from "./Timer"
+import Timer from "./Timer";
+import './main.css';
 let array = [];
 for (let i = 1; i <= 25; i++) {
     array.push(i);
 }
-function OneToFifty() {
+function OneToFifty({show,handleShow,handleClose,time}) {
     const [numbers, setNumbers] = useState(array);
     const [gameFlag, setGameFlag] = useState(false);
     const [current, setCurrent] = useState(1);
 
     const handleClick = num => {
         if (num === current) {
-            if (num === 50) {
+            if (num === 1) {
                 endGame();
             }
             const index = numbers.indexOf(num);
@@ -35,9 +36,9 @@ function OneToFifty() {
         <Container>
             <Board numbers={numbers} handleClick={handleClick}></Board>
             {gameFlag ? (
-                <Timer/>
+                <Timer show={show} handleShow={handleShow} handleClose={handleClose} time={time}/>
             ): (
-                <StartButton onClick={startGame}>시작하기</StartButton>
+                <StartButton className="fnt" onClick={startGame}>시작하기</StartButton>
             )}
         </Container>
     );
@@ -59,6 +60,7 @@ const Container = styled.div`
     border-radius:30px;
     box-shadow:5px 7px 7px 5px rgba(0,0,0,0.16);
     margin:auto;
+    overflow:hidden;
 `;
 const StartButton = styled.button`
     margin-top:30px;

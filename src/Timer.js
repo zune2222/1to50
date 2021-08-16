@@ -1,16 +1,17 @@
 import React,{useState,useEffect,useRef} from "react";
 import styled from "styled-components";
-
-function Timer(){
+import ModalClass from "./Modal";
+function Timer({show,handleClose,handleShow,time}){
     const [timeElpsed,setTimeElapsed]=useState(0);
     const record=useRef();
     record.current = timeElpsed;
     useEffect(()=>{
         const timer = setInterval(()=>{
-            setTimeElapsed(timeElpsed => timeElpsed+30);   
+            setTimeElapsed(timeElpsed => timeElpsed+30);
         },30);
         return () =>{
-            alert("Your Record : " + record.current / 1000);
+            time(record.current/1000);
+            handleShow();
             clearInterval(timer);
         };
     },[]);
