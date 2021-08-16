@@ -14,7 +14,7 @@ function OneToFifty({show,handleShow,handleClose,time}) {
 
     const handleClick = num => {
         if (num === current) {
-            if (num === 1) {
+            if (num === 50) {
                 endGame();
             }
             const index = numbers.indexOf(num);
