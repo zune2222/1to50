@@ -6,8 +6,11 @@ import './main.css';
 import firebase from 'firebase/app';
 import 'firebase/database'
 import config from "./config";
+import {useHistory} from 'react-router';
 firebase.initializeApp(config);
 function ModalClass({ show, handleShow, handleClose, time }) {
+
+    const history = useHistory();
     const database = firebase.database();
     const [name, setName] = useState('');
     const onChange = (e) => {
@@ -22,6 +25,7 @@ function ModalClass({ show, handleShow, handleClose, time }) {
             })
             handleClose();
             history.push('/rank');
+
         }
         else{
             alert("빈칸은 안돼요!");
