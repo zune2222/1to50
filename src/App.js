@@ -14,7 +14,6 @@ function App() {
     <div>
       <Menu></Menu>
       <div className="container">
-
         <div className="d-flex justify-content-center my-4">
           <div className="col-12 col-md-8 col-lg-8">
             <div style={{ marginTop: "25px" }}></div>

@@ -1,6 +1,5 @@
 import React,{useState,useEffect,useRef} from "react";
 import styled from "styled-components";
-import ModalClass from "./Modal";
 function Timer({show,handleClose,handleShow,time}){
     const [timeElpsed,setTimeElapsed]=useState(0);
     const record=useRef();

@@ -15,19 +15,18 @@ function ModalClass({ show, handleShow, handleClose, time }) {
     };
 
     const rankWrite = () => {
-        if (name != "") {
+        if (name !== "") {
             database.ref("user/").push({
                 name: name,
                 time: time
             })
             handleClose();
-            //window.location.href="/rank";
+            window.location.href="/rank";
         }
         else{
             alert("빈칸은 안돼요!");
         }
     }
-    console.log({ time });
     return (
         <>
             <Modal show={show} onHide={handleClose} aria-labelledby="contained-modal-title-vcenter" centered>
