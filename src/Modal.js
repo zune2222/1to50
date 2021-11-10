@@ -21,7 +21,7 @@ function ModalClass({ show, handleShow, handleClose, time }) {
                 time: time
             })
             handleClose();
-            window.location.href="/rank";
+            history.push('/rank');
         }
         else{
             alert("빈칸은 안돼요!");
